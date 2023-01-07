@@ -14,7 +14,7 @@
 
 To install mnsc Masternode use the following command:
 
-`bash <( curl -sL https://raw.githubusercontent.com/mnsccoin/src/master/masternode-install.sh
+`bash <( curl -sL https://raw.githubusercontent.com/mnsccoin/src/master/masternode-install.sh)
 
 - Enjoy
 
