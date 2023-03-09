@@ -4,10 +4,10 @@ we want to backup the mnsc-coin with other masternode coins! <p>
 <p>
 
 (You can buy MNSC from exchange for collateral) <br>
-***•https://trade.birake.com/market/BIRAKE.MNSC_BIRAKE.BTC ***
-***•https://ihostmn.com/sharemn.php?id=220 ***
-***•https://xeggex.com/market/MNSC_USDT  ***
-***•https://xeggex.com/market/MNSC_BTC  ***
+<br> ***•https://trade.birake.com/market/BIRAKE.MNSC_BIRAKE.BTC*** <br>
+<br> ***•https://ihostmn.com/sharemn.php?id=220*** <br>
+<br> ***•https://xeggex.com/market/MNSC_USDT*** <br>
+<br> ***•https://xeggex.com/market/MNSC_BTC*** <br>
 
 <br> More information at: www.mnsaving.com <br>
   
