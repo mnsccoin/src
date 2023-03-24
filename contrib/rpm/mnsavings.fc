@@ -1,0 +1,8 @@
+/usr/bin/mnsavings-cli		--	gen_context(system_u:object_r:mnsavings_exec_t,s0)
+/usr/sbin/mnsavingsd		--	gen_context(system_u:object_r:mnsavings_exec_t,s0)
+/usr/lib(64)?/mnsavings/mnsavingsd		--	gen_context(system_u:object_r:mnsavings_exec_t,s0)
+
+/etc/mnsavings(/.*)?		gen_context(system_u:object_r:mnsavings_conf_t,s0)
+/var/lib/mnsavings(/.*)?		gen_context(system_u:object_r:mnsavings_var_lib_t,s0)
+
+(/var)?/run/mnsavingsd(/.*)?   gen_context(system_u:object_r:mnsavings_var_run_t,s0)

@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Name=mnsc Coin
+Comment=MNSAVINGS P2P Cryptocurrency
+Comment[fr]=MNSAVINGS, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=MNSAVINGS, eşten eşe kriptografik sanal para birimi
+Exec=mnsavings-qt %u
+Terminal=false
+Type=Application
+Icon=mnsavings128
+MimeType=x-scheme-handler/mnsavings;
+Categories=Office;Finance;
+StartupWMClass=mnsavings-qt

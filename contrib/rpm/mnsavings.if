@@ -1,0 +1,157 @@
+
+## <summary>policy for mnsavings</summary>
+
+
+########################################
+## <summary>
+##	Transition to mnsavings.
+## </summary>
+## <param name="domain">
+## <summary>
+##	Domain allowed to transition.
+## </summary>
+## </param>
+#
+interface(`mnsavings_domtrans',`
+	gen_require(`
+		type mnsavings_t, mnsavings_exec_t;
+	')
+
+	corecmd_search_bin($1)
+	domtrans_pattern($1, mnsavings_exec_t, mnsavings_t)
+')
+
+
+########################################
+## <summary>
+##	Execute mnsavings server in the mnsavings domain.
+## </summary>
+## <param name="domain">
+##	<summary>
+##	Domain allowed access.
+##	</summary>
+## </param>
+#
+interface(`mnsavings_initrc_domtrans',`
+	gen_require(`
+		type mnsavings_initrc_exec_t;
+	')
+
+	init_labeled_script_domtrans($1, mnsavings_initrc_exec_t)
+')
+
+
+########################################
+## <summary>
+##	Search mnsavings lib directories.
+## </summary>
+## <param name="domain">
+##	<summary>
+##	Domain allowed access.
+##	</summary>
+## </param>
+#
+interface(`mnsavings_search_lib',`
+	gen_require(`
+		type mnsavings_var_lib_t;
+	')
+
+	allow $1 mnsavings_var_lib_t:dir search_dir_perms;
+	files_search_var_lib($1)
+')
+
+########################################
+## <summary>
+##	Read mnsavings lib files.
+## </summary>
+## <param name="domain">
+##	<summary>
+##	Domain allowed access.
+##	</summary>
+## </param>
+#
+interface(`mnsavings_read_lib_files',`
+	gen_require(`
+		type mnsavings_var_lib_t;
+	')
+
+	files_search_var_lib($1)
+	read_files_pattern($1, mnsavings_var_lib_t, mnsavings_var_lib_t)
+')
+
+########################################
+## <summary>
+##	Manage mnsavings lib files.
+## </summary>
+## <param name="domain">
+##	<summary>
+##	Domain allowed access.
+##	</summary>
+## </param>
+#
+interface(`mnsavings_manage_lib_files',`
+	gen_require(`
+		type mnsavings_var_lib_t;
+	')
+
+	files_search_var_lib($1)
+	manage_files_pattern($1, mnsavings_var_lib_t, mnsavings_var_lib_t)
+')
+
+########################################
+## <summary>
+##	Manage mnsavings lib directories.
+## </summary>
+## <param name="domain">
+##	<summary>
+##	Domain allowed access.
+##	</summary>
+## </param>
+#
+interface(`mnsavings_manage_lib_dirs',`
+	gen_require(`
+		type mnsavings_var_lib_t;
+	')
+
+	files_search_var_lib($1)
+	manage_dirs_pattern($1, mnsavings_var_lib_t, mnsavings_var_lib_t)
+')
+
+
+########################################
+## <summary>
+##	All of the rules required to administrate
+##	a mnsavings environment
+## </summary>
+## <param name="domain">
+##	<summary>
+##	Domain allowed access.
+##	</summary>
+## </param>
+## <param name="role">
+##	<summary>
+##	Role allowed access.
+##	</summary>
+## </param>
+## <rolecap/>
+#
+interface(`mnsavings_admin',`
+	gen_require(`
+		type mnsavings_t;
+		type mnsavings_initrc_exec_t;
+		type mnsavings_var_lib_t;
+	')
+
+	allow $1 mnsavings_t:process { ptrace signal_perms };
+	ps_process_pattern($1, mnsavings_t)
+
+	mnsavings_initrc_domtrans($1)
+	domain_system_change_exemption($1)
+	role_transition $2 mnsavings_initrc_exec_t system_r;
+	allow $2 system_r;
+
+	files_search_var_lib($1)
+	admin_pattern($1, mnsavings_var_lib_t)
+
+')
+

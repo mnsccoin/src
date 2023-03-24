@@ -1,0 +1,6 @@
+usr/local/bin/mnsavings-qt usr/bin
+share/pixmaps/mnsavings32.xpm usr/share/pixmaps
+share/pixmaps/mnsavings16.xpm usr/share/pixmaps
+share/pixmaps/mnsavings128.png usr/share/pixmaps
+debian/mnsavings-qt.desktop usr/share/applications
+debian/mnsavings-qt.protocol usr/share/kde4/services/

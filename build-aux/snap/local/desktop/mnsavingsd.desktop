@@ -1,0 +1,15 @@
+# http://standards.freedesktop.org/desktop-entry-spec/desktop-entry-spec-1.0.html
+
+[Desktop Entry]
+Encoding=UTF-8
+Name=mnsc Coin Daemon SNAP
+Comment=main
+GenericName=MNSAVINGS Digital Currency Daemon Client main network
+Exec=mnsavings-core.daemon %u
+Terminal=true
+Type=Application
+Icon=${SNAP}/share/pixmaps/mnsavings.png
+MimeType=x-scheme-handler/mnsc;
+Categories=X-Office;X-Finance;
+Keywords=internet;mnsavings;zmnsc;core;wallet;daemon;main;snap;launchpad;crypto;digital;currency;coin;token;zerocoin;
+Version=1.0

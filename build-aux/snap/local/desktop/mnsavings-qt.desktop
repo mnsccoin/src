@@ -1,0 +1,15 @@
+# http://standards.freedesktop.org/desktop-entry-spec/desktop-entry-spec-1.0.html
+
+[Desktop Entry]
+Encoding=UTF-8
+Name=mnsc Coin
+Comment=mnsc Coin QT main network
+GenericName=MNSAVINGS Digital Currency QT client main network
+Exec=mnsavings-core.qt %u
+Terminal=false
+Type=Application
+Icon=${SNAP}/share/pixmaps/mnsavings.png
+MimeType=x-scheme-handler/mnsavings;
+Categories=X-Office;X-Finance;
+Keywords=internet;mnsavings;zmnsc;mnsc;core;wallet;qt;main;snap;launchpad;crypto;digital;currency;coin;token;zerocoin;
+Version=1.0
