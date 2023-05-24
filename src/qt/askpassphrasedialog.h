@@ -1,5 +1,6 @@
 // Copyright (c) 2011-2013 The Bitcoin developers
-// Copyright (c) 2017-2019 The MNSAVINGS developers
+// Copyright (c) 2017-2019 The PIVX developers
+// Copyright (c) 2021-2023 The mnsc Developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -7,12 +8,12 @@
 #define BITCOIN_QT_ASKPASSPHRASEDIALOG_H
 
 #include <QDialog>
-#include "qt/mnsavings/prunnable.h"
+#include "qt/pivx/prunnable.h"
 #include "allocators.h"
 #include <QCheckBox>
 
 class WalletModel;
-class MNSAVINGSGUI;
+class PIVXGUI;
 
 namespace Ui
 {
@@ -43,9 +44,7 @@ public:
         Encrypt,        /** Encrypt unencrypted wallet */
         ToggleLock,     /** Toggle wallet lock state */
         ChangePass,     /** Change passphrase */
-        Send_MNSC,       /** Send MNSC */
-        Send_zMNSC,      /** Send zMNSC */
-        Mint_zMNSC,      /** Mint zMNSC */
+        Send_PIV,       /** Send mnsc */
         BIP_38,         /** BIP38 menu */
         Multi_Sig,      /** Multi-Signature dialog */
         Sign_Message,   /** Sign/verify message dialog */
@@ -66,13 +65,14 @@ private:
     bool fCapsLock;
     SecureString newpassCache = "";
 
+    void updateWarningsLabel();
     void run(int type) override;
     void onError(QString error, int type) override;
     QCheckBox *btnWatch;
 
     void initWatch(QWidget *parent);
 
-private slots:
+private Q_SLOTS:
     void onWatchClicked();
     void textChanged();
     void warningMessage();

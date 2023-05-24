@@ -75,10 +75,10 @@ am__make_running_with_option = \
   test $$has_opt = yes
 am__make_dryrun = (target_option=n; $(am__make_running_with_option))
 am__make_keepgoing = (target_option=k; $(am__make_running_with_option))
-pkgdatadir = $(datadir)/mnsavings
-pkgincludedir = $(includedir)/mnsavings
-pkglibdir = $(libdir)/mnsavings
-pkglibexecdir = $(libexecdir)/mnsavings
+pkgdatadir = $(datadir)/mnsc
+pkgincludedir = $(includedir)/mnsc
+pkglibdir = $(libdir)/mnsc
+pkglibexecdir = $(libexecdir)/mnsc
 am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd
 install_sh_DATA = $(install_sh) -c -m 644
 install_sh_PROGRAM = $(install_sh) -c
@@ -92,7 +92,7 @@ NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = x86_64-pc-linux-gnu
-host_triplet = x86_64-pc-linux-gnu
+host_triplet = x86_64-w64-mingw32
 am__append_1 = doc/man
 subdir = .
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
@@ -112,7 +112,6 @@ am__aclocal_m4_deps = $(top_srcdir)/build-aux/m4/ax_boost_base.m4 \
 	$(top_srcdir)/build-aux/m4/bitcoin_find_bdb48.m4 \
 	$(top_srcdir)/build-aux/m4/bitcoin_qt.m4 \
 	$(top_srcdir)/build-aux/m4/bitcoin_subdir_to_include.m4 \
-	$(top_srcdir)/build-aux/m4/gmp.m4 \
 	$(top_srcdir)/build-aux/m4/l_atomic.m4 \
 	$(top_srcdir)/build-aux/m4/libtool.m4 \
 	$(top_srcdir)/build-aux/m4/ltoptions.m4 \
@@ -128,7 +127,7 @@ DIST_COMMON = $(srcdir)/Makefile.am $(top_srcdir)/configure \
 am__CONFIG_DISTCLEAN_FILES = config.status config.cache config.log \
  configure.lineno config.status.lineno
 mkinstalldirs = $(install_sh) -d
-CONFIG_HEADER = $(top_builddir)/src/config/mnsavings-config.h
+CONFIG_HEADER = $(top_builddir)/src/config/pivx-config.h
 CONFIG_CLEAN_FILES = libbitcoinconsensus.pc share/setup.nsi \
 	share/qt/Info.plist test/config.ini \
 	contrib/devtools/split-debug.sh doc/Doxyfile
@@ -234,7 +233,7 @@ am__DIST_COMMON = $(srcdir)/Makefile.in \
 	$(top_srcdir)/doc/Doxyfile.in \
 	$(top_srcdir)/share/qt/Info.plist.in \
 	$(top_srcdir)/share/setup.nsi.in \
-	$(top_srcdir)/src/config/mnsavings-config.h.in \
+	$(top_srcdir)/src/config/pivx-config.h.in \
 	$(top_srcdir)/test/config.ini.in \
 	$(top_srcdir)/test/functional/test_runner.py \
 	$(top_srcdir)/test/util/bitcoin-util-test.py \
@@ -283,61 +282,62 @@ distuninstallcheck_listfiles = find . -type f -print
 am__distuninstallcheck_listfiles = $(distuninstallcheck_listfiles) \
   | sed 's|^\./|$(prefix)/|' | grep -v '$(infodir)/dir$$'
 distcleancheck_listfiles = find . -type f -print
-ACLOCAL = ${SHELL} /root/mnsc/build-aux/missing aclocal-1.15
+ACLOCAL = ${SHELL} /root/mnsc2000/build-aux/missing aclocal-1.15
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 0
-AR = ar
+AR = /usr/bin/x86_64-w64-mingw32-ar
 ARFLAGS = cr
-AUTOCONF = ${SHELL} /root/mnsc/build-aux/missing autoconf
-AUTOHEADER = ${SHELL} /root/mnsc/build-aux/missing autoheader
-AUTOMAKE = ${SHELL} /root/mnsc/build-aux/missing automake-1.15
+ARM_CRC_CXXFLAGS = 
+AUTOCONF = ${SHELL} /root/mnsc2000/build-aux/missing autoconf
+AUTOHEADER = ${SHELL} /root/mnsc2000/build-aux/missing autoheader
+AUTOMAKE = ${SHELL} /root/mnsc2000/build-aux/missing automake-1.15
 AVX2_CXXFLAGS = -mavx -mavx2
-AWK = gawk
+AWK = mawk
 BDB_CFLAGS = 
 BDB_CPPFLAGS = 
 BDB_LIBS = -ldb_cxx-4.8
-BITCOIN_CLI_NAME = mnsavings-cli
-BITCOIN_DAEMON_NAME = mnsavingsd
-BITCOIN_GUI_NAME = mnsavings-qt
-BITCOIN_TX_NAME = mnsavings-tx
-BOOST_CHRONO_LIB = -lboost_chrono-mt
-BOOST_CPPFLAGS = -DBOOST_SP_USE_STD_ATOMIC -DBOOST_AC_USE_STD_ATOMIC -pthread -I/root/mnsc/depends/x86_64-pc-linux-gnu/share/../include
-BOOST_FILESYSTEM_LIB = -lboost_filesystem-mt
-BOOST_LDFLAGS = -L/root/mnsc/depends/x86_64-pc-linux-gnu/share/../lib
-BOOST_LIBS = -L/root/mnsc/depends/x86_64-pc-linux-gnu/share/../lib -lboost_system-mt -lboost_filesystem-mt -lboost_program_options-mt -lboost_thread-mt -lboost_chrono-mt
-BOOST_PROGRAM_OPTIONS_LIB = -lboost_program_options-mt
-BOOST_SYSTEM_LIB = -lboost_system-mt
-BOOST_THREAD_LIB = -lboost_thread-mt
+BITCOIN_CLI_NAME = mnsc-cli
+BITCOIN_DAEMON_NAME = mnscd
+BITCOIN_GUI_NAME = mnsc-qt
+BITCOIN_TX_NAME = mnsc-tx
+BOOST_CHRONO_LIB = -lboost_chrono-mt-s-x64
+BOOST_CPPFLAGS = -DBOOST_SP_USE_STD_ATOMIC -DBOOST_AC_USE_STD_ATOMIC -mthreads -I/root/mnsc2000/depends/x86_64-w64-mingw32/share/../include
+BOOST_FILESYSTEM_LIB = -lboost_filesystem-mt-s-x64
+BOOST_LDFLAGS = -L/root/mnsc2000/depends/x86_64-w64-mingw32/share/../lib
+BOOST_LIBS = -L/root/mnsc2000/depends/x86_64-w64-mingw32/share/../lib -lboost_system-mt-s-x64 -lboost_filesystem-mt-s-x64 -lboost_program_options-mt-s-x64 -lboost_thread-mt-s-x64 -lboost_chrono-mt-s-x64
+BOOST_PROGRAM_OPTIONS_LIB = -lboost_program_options-mt-s-x64
+BOOST_SYSTEM_LIB = -lboost_system-mt-s-x64
+BOOST_THREAD_LIB = -lboost_thread-mt-s-x64
 BOOST_UNIT_TEST_FRAMEWORK_LIB = 
 BREW = 
-CC = gcc -m64
+CC = x86_64-w64-mingw32-gcc
 CCACHE = 
 CCDEPMODE = depmode=gcc3
-CFLAGS = -pipe -O2 
-CHARTS_CFLAGS = -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtCharts -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtWidgets -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtGui -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtCore
-CHARTS_LIBS = -L/root/mnsc/depends/x86_64-pc-linux-gnu/lib -L/root/mnsc/depends/work/build/x86_64-pc-linux-gnu/qt/5.9.7-41929c5c060/qtbase/lib -L/root/mnsc/depends/x86_64-pc-linux-gnu/lib -lQt5Charts -lQt5Widgets -lQt5Gui -lqtlibpng -lqtharfbuzz -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lQt5Widgets -lQt5Gui -lqtlibpng -lqtharfbuzz -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lQt5Gui -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lqtlibpng -lqtharfbuzz -lz -lQt5Core -lpthread -lm -lz -lqtpcre2 -ldl
+CFLAGS = -pipe -O2 -O3
+CHARTS_CFLAGS = 
+CHARTS_LIBS = -lQt5Charts
 CLIENT_VERSION_BUILD = 0
 CLIENT_VERSION_IS_RELEASE = true
-CLIENT_VERSION_MAJOR = 1
+CLIENT_VERSION_MAJOR = 2
 CLIENT_VERSION_MINOR = 0
 CLIENT_VERSION_REVISION = 0
-COMPAT_LDFLAGS =  -Wl,--wrap=__divmoddi4 -Wl,--wrap=log2f
-COPYRIGHT_YEAR = 2022
-CPP = gcc -m64 -E
-CPPFILT = /usr/bin/c++filt
-CPPFLAGS = -I/root/mnsc/depends/x86_64-pc-linux-gnu/share/../include/ -fPIC -O3 --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS
-CRYPTO_CFLAGS = -I/root/mnsc/depends/x86_64-pc-linux-gnu/include
-CRYPTO_LIBS = -L/root/mnsc/depends/x86_64-pc-linux-gnu/lib -lcrypto -ldl
-CXX = g++ -m64 -std=c++11
-CXXCPP = g++ -m64 -std=c++11 -E
+COMPAT_LDFLAGS = 
+COPYRIGHT_YEAR = 2023
+CPP = x86_64-w64-mingw32-gcc -E
+CPPFILT = /usr/bin/x86_64-w64-mingw32-c++filt
+CPPFLAGS = -I/root/mnsc2000/depends/x86_64-w64-mingw32/share/../include/  -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -D_MT -DWIN32 -D_WINDOWS -DBOOST_THREAD_USE_LIB -D_FILE_OFFSET_BITS=64
+CRYPTO_CFLAGS = 
+CRYPTO_LIBS = -lcrypto
+CXX = x86_64-w64-mingw32-g++ -std=c++11
+CXXCPP = x86_64-w64-mingw32-g++ -std=c++11 -E
 CXXDEPMODE = depmode=gcc3
-CXXFLAGS = -pipe -O2 -fPIC -O3 --param ggc-min-expand=1 --param ggc-min-heapsize=32768
+CXXFLAGS = -pipe -O2 -O3 -fno-strict-aliasing -Wno-builtin-declaration-mismatch
 CYGPATH_W = echo
 DEBUG_CPPFLAGS = 
 DEBUG_CXXFLAGS = 
 DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps
-DLLTOOL = false
+DLLTOOL = x86_64-w64-mingw32-dlltool
 DOXYGEN = /usr/bin/doxygen
 DSYMUTIL = 
 DUMPBIN = 
@@ -346,14 +346,14 @@ ECHO_N = -n
 ECHO_T = 
 EGREP = /bin/grep -E
 ERROR_CXXFLAGS = 
-EVENT_CFLAGS = -I/root/mnsc/depends/x86_64-pc-linux-gnu/include
-EVENT_LIBS = -L/root/mnsc/depends/x86_64-pc-linux-gnu/lib -levent
-EVENT_PTHREADS_CFLAGS = -pthread -I/root/mnsc/depends/x86_64-pc-linux-gnu/include
-EVENT_PTHREADS_LIBS = -L/root/mnsc/depends/x86_64-pc-linux-gnu/lib -levent_pthreads -levent
-EXEEXT = 
+EVENT_CFLAGS = 
+EVENT_LIBS = -levent
+EVENT_PTHREADS_CFLAGS = 
+EVENT_PTHREADS_LIBS = 
+EXEEXT = .exe
 EXTENDED_FUNCTIONAL_TESTS = 
 FGREP = /bin/grep -F
-GCOV = /usr/bin/gcov
+GCOV = /usr/bin/x86_64-w64-mingw32-gcov
 GENHTML = 
 GENISOIMAGE = 
 GIT = /usr/bin/git
@@ -362,8 +362,15 @@ GPROF_LDFLAGS =
 GREP = /bin/grep
 HARDENED_CPPFLAGS =  -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2
 HARDENED_CXXFLAGS =  -Wstack-protector -fstack-protector-all
-HARDENED_LDFLAGS =  -Wl,-z,relro -Wl,-z,now -pie
+HARDENED_LDFLAGS =  -Wl,--dynamicbase -Wl,--nxcompat -Wl,--high-entropy-va -pie
+HAVE_BUILTIN_PREFETCH = 1
 HAVE_CXX11 = 1
+HAVE_FDATASYNC = 0
+HAVE_FULLFSYNC = 0
+HAVE_MM_PREFETCH = 1
+HAVE_O_CLOEXEC = 0
+HAVE_STRONG_GETAUXVAL = 0
+HAVE_WEAK_GETAUXVAL = 1
 HEXDUMP = /usr/bin/hexdump
 IMAGEMAGICK_CONVERT = 
 INSTALL = /usr/bin/install -c
@@ -374,110 +381,109 @@ INSTALL_SCRIPT = ${INSTALL}
 INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
 LCOV = 
 LCOV_OPTS = 
-LD = /usr/bin/ld -m elf_x86_64
-LDFLAGS = -L/root/mnsc/depends/x86_64-pc-linux-gnu/share/../lib -static-libstdc++
+LD = /usr/bin/x86_64-w64-mingw32-ld
+LDFLAGS = -L/root/mnsc2000/depends/x86_64-w64-mingw32/share/../lib 
 LEVELDB_CPPFLAGS = 
-LEVELDB_TARGET_FLAGS = -DOS_LINUX
 LIBLEVELDB = 
 LIBMEMENV = 
 LIBOBJS = 
-LIBS = -lrt  -lgmp
+LIBS = -lQt5AccessibilitySupport -lQt5DeviceDiscoverySupport -lQt5FbSupport -lQt5ThemeSupport -lQt5EventDispatcherSupport -lQt5FontDatabaseSupport -lssp -lcrypt32 -liphlpapi -lshlwapi -lmswsock -lws2_32 -ladvapi32 -lrpcrt4 -luuid -loleaut32 -lole32 -lcomctl32 -lshell32 -lwinmm -lwinspool -lcomdlg32 -lgdi32 -luser32 -lkernel32 -lmingwthrd 
 LIBTOOL = $(SHELL) $(top_builddir)/libtool
-LIBTOOL_APP_LDFLAGS = 
+LIBTOOL_APP_LDFLAGS =  -all-static
 LIPO = 
 LN_S = ln -s
-LRELEASE = /root/mnsc/depends/x86_64-pc-linux-gnu/share/../native/bin/lrelease
+LRELEASE = /root/mnsc2000/depends/x86_64-w64-mingw32/share/../native/bin/lrelease
 LTLIBOBJS = 
 LT_SYS_LIBRARY_PATH = 
-LUPDATE = /root/mnsc/depends/x86_64-pc-linux-gnu/share/../native/bin/lupdate
+LUPDATE = /root/mnsc2000/depends/x86_64-w64-mingw32/share/../native/bin/lupdate
 MAINT = 
-MAKEINFO = ${SHELL} /root/mnsc/build-aux/missing makeinfo
-MAKENSIS = 
+MAKEINFO = ${SHELL} /root/mnsc2000/build-aux/missing makeinfo
+MAKENSIS = /usr/bin/makensis
 MANIFEST_TOOL = :
-MINIUPNPC_CPPFLAGS = 
+MINIUPNPC_CPPFLAGS = -DSTATICLIB -DMINIUPNP_STATICLIB
 MINIUPNPC_LIBS = -lminiupnpc
 MKDIR_P = /bin/mkdir -p
-MOC = /root/mnsc/depends/x86_64-pc-linux-gnu/share/../native/bin/moc
+MOC = /root/mnsc2000/depends/x86_64-w64-mingw32/share/../native/bin/moc
 MOC_DEFS = -DHAVE_CONFIG_H -I$(srcdir)
-NM = nm
+NM = x86_64-w64-mingw32-nm
 NMEDIT = 
 NOWARN_CXXFLAGS = 
-OBJCOPY = /usr/bin/objcopy
-OBJCXX = g++ -m64 -std=c++11
+OBJCOPY = /usr/bin/x86_64-w64-mingw32-objcopy
+OBJCXX = x86_64-w64-mingw32-g++ -std=c++11
 OBJCXXDEPMODE = depmode=gcc3
 OBJCXXFLAGS = 
-OBJDUMP = objdump
+OBJDUMP = x86_64-w64-mingw32-objdump
 OBJEXT = o
 OTOOL = 
 OTOOL64 = 
-PACKAGE = mnsavings
-PACKAGE_BUGREPORT = https://github.com/derikglobal/mnsaving/issues
-PACKAGE_NAME = mnsc Coin
-PACKAGE_STRING = mnsc Coin 1.0.0
-PACKAGE_TARNAME = mnsavings
+PACKAGE = mnsc
+PACKAGE_BUGREPORT = https://github.com/mnsc/mnsc
+PACKAGE_NAME = mnsc Core
+PACKAGE_STRING = mnsc Core 2.0.0
+PACKAGE_TARNAME = mnsc
 PACKAGE_URL = https://mnsaving.com/
-PACKAGE_VERSION = 1.0.0
+PACKAGE_VERSION = 2.0.0
 PATH_SEPARATOR = :
-PIC_FLAGS = -fPIC
+PIC_FLAGS = 
 PIE_FLAGS = -fPIE
 PKG_CONFIG = /usr/bin/pkg-config --static
 PKG_CONFIG_LIBDIR = 
-PKG_CONFIG_PATH = /root/mnsc/depends/x86_64-pc-linux-gnu/share/../share/pkgconfig:/root/mnsc/depends/x86_64-pc-linux-gnu/share/../lib/pkgconfig
+PKG_CONFIG_PATH = /root/mnsc2000/depends/x86_64-w64-mingw32/share/../share/pkgconfig:/root/mnsc2000/depends/x86_64-w64-mingw32/share/../lib/pkgconfig
 PORT = 
-PROTOBUF_CFLAGS = -pthread -I/root/mnsc/depends/x86_64-pc-linux-gnu/include
-PROTOBUF_LIBS = -L/root/mnsc/depends/x86_64-pc-linux-gnu/lib -lprotobuf -pthread -lpthread -lz
-PROTOC = /root/mnsc/depends/x86_64-pc-linux-gnu/share/../native/bin/protoc
-PTHREAD_CC = gcc -m64
+PROTOBUF_CFLAGS = 
+PROTOBUF_LIBS = -lprotobuf
+PROTOC = /root/mnsc2000/depends/x86_64-w64-mingw32/share/../native/bin/protoc
+PTHREAD_CC = x86_64-w64-mingw32-gcc
 PTHREAD_CFLAGS = -pthread
 PTHREAD_LIBS = 
 PYTHON = /usr/bin/python3.6
-PYTHONPATH = /root/mnsc/depends/x86_64-pc-linux-gnu/share/../native/lib/python3/dist-packages:
-QR_CFLAGS = -I/root/mnsc/depends/x86_64-pc-linux-gnu/include
-QR_LIBS = -L/root/mnsc/depends/x86_64-pc-linux-gnu/lib -lqrencode -lpthread
-QT5_CFLAGS = -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtNetwork -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtWidgets -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtGui -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtCore
-QT5_LIBS = -L/root/mnsc/depends/x86_64-pc-linux-gnu/lib -lQt5Network -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lz -lssl -lcrypto -lQt5Widgets -lQt5Gui -lqtlibpng -lqtharfbuzz -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lQt5Gui -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lqtlibpng -lqtharfbuzz -lz -lQt5Core -lpthread -lm -lz -lqtpcre2 -ldl
-QTACCESSIBILITY_CFLAGS = -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtAccessibilitySupport -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtGui -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtCore
-QTACCESSIBILITY_LIBS = -L/root/mnsc/depends/x86_64-pc-linux-gnu/lib -lQt5AccessibilitySupport -lQt5Gui -lqtlibpng -lqtharfbuzz -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lQt5Gui -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lqtlibpng -lqtharfbuzz -lz -lQt5Core -lpthread -lm -lz -lqtpcre2 -ldl
+PYTHONPATH = /root/mnsc2000/depends/x86_64-w64-mingw32/share/../native/lib/python3/dist-packages:
+QR_CFLAGS = 
+QR_LIBS = -lqrencode
+QT5_CFLAGS = 
+QT5_LIBS = 
+QTACCESSIBILITY_CFLAGS = 
+QTACCESSIBILITY_LIBS = 
 QTCGL_CFLAGS = 
 QTCGL_LIBS = 
 QTCLIPBOARD_CFLAGS = 
 QTCLIPBOARD_LIBS = 
-QTDEVICEDISCOVERY_CFLAGS = -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtDeviceDiscoverySupport -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtCore
-QTDEVICEDISCOVERY_LIBS = -L/root/mnsc/depends/x86_64-pc-linux-gnu/lib -lQt5DeviceDiscoverySupport -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lQt5Core -lpthread -lm -lz -lqtpcre2 -ldl
-QTEVENTDISPATCHER_CFLAGS = -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtEventDispatcherSupport -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtGui -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtCore
-QTEVENTDISPATCHER_LIBS = -L/root/mnsc/depends/x86_64-pc-linux-gnu/lib -lQt5EventDispatcherSupport -lQt5Gui -lqtlibpng -lqtharfbuzz -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lQt5Gui -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lqtlibpng -lqtharfbuzz -lz -lQt5Core -lpthread -lm -lz -lqtpcre2 -ldl
-QTFB_CFLAGS = -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtFbSupport -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtGui -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtCore
-QTFB_LIBS = -L/root/mnsc/depends/x86_64-pc-linux-gnu/lib -lQt5FbSupport -lQt5Gui -lqtlibpng -lqtharfbuzz -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lQt5Gui -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lqtlibpng -lqtharfbuzz -lz -lQt5Core -lpthread -lm -lz -lqtpcre2 -ldl
-QTFONTDATABASE_CFLAGS = -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtFontDatabaseSupport -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtGui -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtCore
-QTFONTDATABASE_LIBS = -L/root/mnsc/depends/x86_64-pc-linux-gnu/lib -L//root/mnsc/depends/x86_64-pc-linux-gnu/lib -L/root/mnsc/depends/x86_64-pc-linux-gnu/lib -lQt5FontDatabaseSupport -lQt5Gui -lqtlibpng -lqtharfbuzz -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lfontconfig -lfreetype -lQt5Gui -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lqtlibpng -lqtharfbuzz -lz -lQt5Core -lpthread -lm -lz -lqtpcre2 -ldl
+QTDEVICEDISCOVERY_CFLAGS = 
+QTDEVICEDISCOVERY_LIBS = 
+QTEVENTDISPATCHER_CFLAGS = 
+QTEVENTDISPATCHER_LIBS = 
+QTFB_CFLAGS = 
+QTFB_LIBS = 
+QTFONTDATABASE_CFLAGS = 
+QTFONTDATABASE_LIBS = 
 QTGRAPHICS_CFLAGS = 
 QTGRAPHICS_LIBS = 
 QTPLATFORM_CFLAGS = 
 QTPLATFORM_LIBS = 
-QTTHEME_CFLAGS = -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtThemeSupport -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtGui -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtCore
-QTTHEME_LIBS = -L/root/mnsc/depends/x86_64-pc-linux-gnu/lib -lQt5ThemeSupport -lQt5Gui -lqtlibpng -lqtharfbuzz -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lQt5DBus -lQt5Core -lpthread -lm -lz -lqtpcre2 -ldl -lQt5Gui -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lqtlibpng -lqtharfbuzz -lz -lQt5Core -lpthread -lm -lz -lqtpcre2 -ldl
-QTXCBQPA_CFLAGS = -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtXcbQpa -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtServiceSupport -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtThemeSupport -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtEventDispatcherSupport -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtFontDatabaseSupport -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtGui -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtCore
-QTXCBQPA_LIBS = -L/root/mnsc/depends/x86_64-pc-linux-gnu/lib -L//root/mnsc/depends/x86_64-pc-linux-gnu/lib -L/root/mnsc/depends/x86_64-pc-linux-gnu/lib -L//root/mnsc/depends/x86_64-pc-linux-gnu/lib -L/root/mnsc/depends/x86_64-pc-linux-gnu/lib -lQt5XcbQpa -lQt5ServiceSupport -lQt5ThemeSupport -lQt5DBus -lQt5EventDispatcherSupport -lQt5FontDatabaseSupport -lfontconfig -lfreetype -lQt5Gui -lqtlibpng -lqtharfbuzz -lQt5Core -lm -lz -lqtpcre2 -lpthread -lX11-xcb -lX11 -lxcb-static -lxcb -ldl -lQt5ServiceSupport -lQt5Gui -lqtlibpng -lqtharfbuzz -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lQt5ThemeSupport -lQt5Gui -lqtlibpng -lqtharfbuzz -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lQt5DBus -lQt5Core -lpthread -lm -lz -lqtpcre2 -ldl -lQt5EventDispatcherSupport -lQt5Gui -lqtlibpng -lqtharfbuzz -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lQt5FontDatabaseSupport -lQt5Gui -lqtlibpng -lqtharfbuzz -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lfontconfig -lfreetype -lQt5Gui -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lqtlibpng -lqtharfbuzz -lz -lQt5Core -lpthread -lm -lz -lqtpcre2 -ldl
-QT_CONCURRENT_CFLAGS = -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtConcurrent -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtCore
-QT_CONCURRENT_LIBS = -L/root/mnsc/depends/x86_64-pc-linux-gnu/lib -lQt5Concurrent -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lQt5Core -lpthread -lm -lz -lqtpcre2 -ldl
-QT_DBUS_CFLAGS = -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtDBus -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtCore
-QT_DBUS_INCLUDES = -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtDBus -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtCore
-QT_DBUS_LIBS = -L/root/mnsc/depends/x86_64-pc-linux-gnu/lib -lQt5DBus -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lQt5Core -lpthread -lm -lz -lqtpcre2 -ldl
-QT_INCLUDES = -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtNetwork -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtWidgets -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtGui -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtCore -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtConcurrent -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtCore
-QT_LDFLAGS = 
-QT_LIBS = -lqxcb -lxcb-static -lqsvgicon -lqsvg -lqminimal -L/root/mnsc/depends/x86_64-pc-linux-gnu/lib -L//root/mnsc/depends/x86_64-pc-linux-gnu/lib -L/root/mnsc/depends/x86_64-pc-linux-gnu/lib -L//root/mnsc/depends/x86_64-pc-linux-gnu/lib -L/root/mnsc/depends/x86_64-pc-linux-gnu/lib -lQt5XcbQpa -lQt5ServiceSupport -lQt5ThemeSupport -lQt5DBus -lQt5EventDispatcherSupport -lQt5FontDatabaseSupport -lfontconfig -lfreetype -lQt5Gui -lqtlibpng -lqtharfbuzz -lQt5Core -lm -lz -lqtpcre2 -lpthread -lX11-xcb -lX11 -lxcb-static -lxcb -ldl -lQt5ServiceSupport -lQt5Gui -lqtlibpng -lqtharfbuzz -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lQt5ThemeSupport -lQt5Gui -lqtlibpng -lqtharfbuzz -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lQt5DBus -lQt5Core -lpthread -lm -lz -lqtpcre2 -ldl -lQt5EventDispatcherSupport -lQt5Gui -lqtlibpng -lqtharfbuzz -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lQt5FontDatabaseSupport -lQt5Gui -lqtlibpng -lqtharfbuzz -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lfontconfig -lfreetype -lQt5Gui -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lqtlibpng -lqtharfbuzz -lz -lQt5Core -lpthread -lm -lz -lqtpcre2 -ldl -L/root/mnsc/depends/x86_64-pc-linux-gnu/lib -lX11-xcb -lX11 -lpthread -lxcb -lXau -lQt5FbSupport -lQt5AccessibilitySupport -lQt5DeviceDiscoverySupport -lQt5ThemeSupport -lQt5EventDispatcherSupport -lQt5FontDatabaseSupport -L/root/mnsc/depends/x86_64-pc-linux-gnu/lib -lQt5Network -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lz -lssl -lcrypto -lQt5Widgets -lQt5Gui -lqtlibpng -lqtharfbuzz -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lQt5Gui -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lqtlibpng -lqtharfbuzz -lz -lQt5Core -lpthread -lm -lz -lqtpcre2 -ldl -L/root/mnsc/depends/x86_64-pc-linux-gnu/lib -L/root/mnsc/depends/work/build/x86_64-pc-linux-gnu/qt/5.9.7-41929c5c060/qtbase/lib -L/root/mnsc/depends/x86_64-pc-linux-gnu/lib -lQt5Svg -lQt5Widgets -lQt5Gui -lqtlibpng -lqtharfbuzz -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lz -lQt5Widgets -lQt5Gui -lqtlibpng -lqtharfbuzz -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lQt5Gui -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lqtlibpng -lqtharfbuzz -lz -lQt5Core -lpthread -lm -lz -lqtpcre2 -ldl -L/root/mnsc/depends/x86_64-pc-linux-gnu/lib -lQt5Concurrent -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lQt5Core -lpthread -lm -lz -lqtpcre2 -ldl -L/root/mnsc/depends/x86_64-pc-linux-gnu/share/../plugins/platforms -L/root/mnsc/depends/x86_64-pc-linux-gnu/share/../plugins/imageformats -L/root/mnsc/depends/x86_64-pc-linux-gnu/share/../plugins/iconengines
+QTTHEME_CFLAGS = 
+QTTHEME_LIBS = 
+QTXCBQPA_CFLAGS = 
+QTXCBQPA_LIBS = 
+QT_CONCURRENT_CFLAGS = 
+QT_CONCURRENT_LIBS = 
+QT_DBUS_CFLAGS = 
+QT_DBUS_INCLUDES = 
+QT_DBUS_LIBS = -lQt5DBus -L/root/mnsc2000/depends/x86_64-w64-mingw32/share/../lib
+QT_INCLUDES = -I/root/mnsc2000/depends/x86_64-w64-mingw32/share/../include -I/root/mnsc2000/depends/x86_64-w64-mingw32/share/../include/QtCore -I/root/mnsc2000/depends/x86_64-w64-mingw32/share/../include/QtGui -I/root/mnsc2000/depends/x86_64-w64-mingw32/share/../include/QtWidgets -I/root/mnsc2000/depends/x86_64-w64-mingw32/share/../include/QtNetwork -I/root/mnsc2000/depends/x86_64-w64-mingw32/share/../include/QtTest -I/root/mnsc2000/depends/x86_64-w64-mingw32/share/../include/QtDBus -I/root/mnsc2000/depends/x86_64-w64-mingw32/share/../include/QtConcurrent -I/root/mnsc2000/depends/x86_64-w64-mingw32/share/../include/QtSvg -I/root/mnsc2000/depends/x86_64-w64-mingw32/share/../include/QtCharts
+QT_LDFLAGS =  -mwindows
+QT_LIBS = -lqwindows -lqsvgicon -lqgif -lqsvg -lqminimal -lQt5Concurrent -lQt5Widgets -lQt5Network -lQt5Gui     -lQt5Core    -lqtharfbuzz -lqtpcre2 -lqtlibpng -lz  -limm32  -L/root/mnsc2000/depends/x86_64-w64-mingw32/share/../lib -lQt5Svg -L/root/mnsc2000/depends/x86_64-w64-mingw32/share/../lib -L/root/mnsc2000/depends/x86_64-w64-mingw32/share/../plugins/platforms -L/root/mnsc2000/depends/x86_64-w64-mingw32/share/../plugins/imageformats -L/root/mnsc2000/depends/x86_64-w64-mingw32/share/../plugins/iconengines -lversion -ldwmapi -luxtheme
 QT_PIE_FLAGS = -fPIE
 QT_SELECT = qt5
-QT_SVG_CFLAGS = -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtSvg -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtWidgets -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtGui -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtCore
-QT_SVG_INCLUDES = -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtSvg -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtWidgets -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtGui -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtCore
-QT_SVG_LIBS = -L/root/mnsc/depends/x86_64-pc-linux-gnu/lib -L/root/mnsc/depends/work/build/x86_64-pc-linux-gnu/qt/5.9.7-41929c5c060/qtbase/lib -L/root/mnsc/depends/x86_64-pc-linux-gnu/lib -lQt5Svg -lQt5Widgets -lQt5Gui -lqtlibpng -lqtharfbuzz -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lz -lQt5Widgets -lQt5Gui -lqtlibpng -lqtharfbuzz -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lQt5Gui -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lqtlibpng -lqtharfbuzz -lz -lQt5Core -lpthread -lm -lz -lqtpcre2 -ldl
-QT_TEST_CFLAGS = -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtTest -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtCore
-QT_TEST_INCLUDES = -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtTest -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/QtCore
-QT_TEST_LIBS = -L/root/mnsc/depends/x86_64-pc-linux-gnu/lib -lQt5Test -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lQt5Core -lpthread -lm -lz -lqtpcre2 -ldl
-QT_TRANSLATION_DIR = /root/mnsc/depends/x86_64-pc-linux-gnu/share/../translations
-RANLIB = ranlib
-RCC = /root/mnsc/depends/x86_64-pc-linux-gnu/share/../native/bin/rcc
-READELF = /usr/bin/readelf
+QT_SVG_CFLAGS = 
+QT_SVG_INCLUDES = 
+QT_SVG_LIBS = -lQt5Svg -L/root/mnsc2000/depends/x86_64-w64-mingw32/share/../lib
+QT_TEST_CFLAGS = 
+QT_TEST_INCLUDES = 
+QT_TEST_LIBS = -lQt5Test -L/root/mnsc2000/depends/x86_64-w64-mingw32/share/../lib
+QT_TRANSLATION_DIR = /root/mnsc2000/depends/x86_64-w64-mingw32/share/../translations
+RANLIB = /usr/bin/x86_64-w64-mingw32-ranlib
+RCC = /root/mnsc2000/depends/x86_64-w64-mingw32/share/../native/bin/rcc
+READELF = /usr/bin/x86_64-w64-mingw32-readelf
 RELDFLAGS = 
 RSVG_CONVERT = 
 SANITIZER_CXXFLAGS = 
@@ -488,31 +494,31 @@ SHANI_CXXFLAGS = -msse4 -msha
 SHELL = /bin/bash
 SSE41_CXXFLAGS = -msse4.1
 SSE42_CXXFLAGS = -msse4.2
-SSL_CFLAGS = -I/root/mnsc/depends/x86_64-pc-linux-gnu/include
-SSL_LIBS = -L/root/mnsc/depends/x86_64-pc-linux-gnu/lib -lssl -lcrypto -ldl
-STRIP = /usr/bin/strip
+SSL_CFLAGS = 
+SSL_LIBS = -lssl
+STRIP = /usr/bin/x86_64-w64-mingw32-strip
 TESTDEFS = 
 TIFFCP = 
-UIC = /root/mnsc/depends/x86_64-pc-linux-gnu/share/../native/bin/uic
+UIC = /root/mnsc2000/depends/x86_64-w64-mingw32/share/../native/bin/uic
 UNIVALUE_CFLAGS = -I$(srcdir)/univalue/include
 UNIVALUE_LIBS = univalue/libunivalue.la
 USE_NUM_GMP = 
 USE_NUM_OPENSSL = 
 USE_QTCHARTS = 
 USE_UPNP = 
-VERSION = 1.0.0
+VERSION = 2.0.0
 WARN_CXXFLAGS = 
-WINDOWS_BITS = 
-WINDRES = 
-X11XCB_CFLAGS = -I/root/mnsc/depends/x86_64-pc-linux-gnu/include -I/root/mnsc/depends/x86_64-pc-linux-gnu/include/xcb-shared -I/root/mnsc/depends/x86_64-pc-linux-gnu/include
-X11XCB_LIBS = -L/root/mnsc/depends/x86_64-pc-linux-gnu/lib -lX11-xcb -lX11 -lpthread -lxcb -lXau
+WINDOWS_BITS = 64
+WINDRES = /usr/bin/x86_64-w64-mingw32-windres
+X11XCB_CFLAGS = 
+X11XCB_LIBS = 
 XGETTEXT = 
-ZMQ_CFLAGS = -I/root/mnsc/depends/x86_64-pc-linux-gnu/include
-ZMQ_LIBS = -L/root/mnsc/depends/x86_64-pc-linux-gnu/lib -lzmq -lpthread -lrt
-abs_builddir = /root/mnsc
-abs_srcdir = /root/mnsc
-abs_top_builddir = /root/mnsc
-abs_top_srcdir = /root/mnsc
+ZMQ_CFLAGS =  -DZMQ_STATIC
+ZMQ_LIBS = -lzmq
+abs_builddir = /root/mnsc2000
+abs_srcdir = /root/mnsc2000
+abs_top_builddir = /root/mnsc2000
+abs_top_srcdir = /root/mnsc2000
 ac_ct_AR = 
 ac_ct_CC = 
 ac_ct_CXX = 
@@ -536,15 +542,15 @@ datarootdir = ${prefix}/share
 docdir = ${datarootdir}/doc/${PACKAGE_TARNAME}
 dvidir = ${docdir}
 exec_prefix = ${prefix}
-host = x86_64-pc-linux-gnu
-host_alias = x86_64-pc-linux-gnu
+host = x86_64-w64-mingw32
+host_alias = x86_64-w64-mingw32
 host_cpu = x86_64
-host_os = linux-gnu
-host_vendor = pc
+host_os = mingw32
+host_vendor = w64
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /root/mnsc/build-aux/install-sh
+install_sh = ${SHELL} /root/mnsc2000/build-aux/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -553,7 +559,7 @@ mandir = ${datarootdir}/man
 mkdir_p = $(MKDIR_P)
 oldincludedir = /usr/include
 pdfdir = ${docdir}
-prefix = /root/mnsc/depends/x86_64-pc-linux-gnu
+prefix = /root/mnsc2000/depends/x86_64-w64-mingw32
 program_transform_name = s,x,x,
 psdir = ${docdir}
 runstatedir = ${localstatedir}/run
@@ -576,7 +582,7 @@ BITCOIN_CLI_BIN = $(top_builddir)/src/$(BITCOIN_CLI_NAME)$(EXEEXT)
 BITCOIN_WIN_INSTALLER = $(PACKAGE)-$(PACKAGE_VERSION)-win$(WINDOWS_BITS)-setup$(EXEEXT)
 empty := 
 space := $(empty) $(empty)
-OSX_APP = MNSAVINGS-Qt.app
+OSX_APP = mnsc-Qt.app
 OSX_VOLNAME = $(subst $(space),-,$(PACKAGE_NAME))
 OSX_DMG = $(OSX_VOLNAME).dmg
 OSX_BACKGROUND_SVG = background.svg
@@ -589,9 +595,9 @@ OSX_INSTALLER_ICONS = $(top_srcdir)/src/qt/res/icons/bitcoin.icns
 OSX_PLIST = $(top_builddir)/share/qt/Info.plist #not installed
 OSX_QT_TRANSLATIONS = da,de,es,hu,ru,uk,zh_CN,zh_TW
 DIST_DOCS = $(wildcard doc/*.md) $(wildcard doc/release-notes/*.md)
-DIST_CONTRIB = $(top_srcdir)/contrib/mnsavings-cli.bash-completion \
-	       $(top_srcdir)/contrib/mnsavings-tx.bash-completion \
-	       $(top_srcdir)/contrib/mnsavingsd.bash-completion \
+DIST_CONTRIB = $(top_srcdir)/contrib/pivx-cli.bash-completion \
+	       $(top_srcdir)/contrib/pivx-tx.bash-completion \
+	       $(top_srcdir)/contrib/pivxd.bash-completion \
            $(top_srcdir)/contrib/init \
            $(top_srcdir)/contrib/install_db4.sh
 
@@ -602,14 +608,14 @@ DIST_SHARE = \
 BIN_CHECKS = $(top_srcdir)/contrib/devtools/symbol-check.py \
            $(top_srcdir)/contrib/devtools/security-check.py
 
-WINDOWS_PACKAGING = $(top_srcdir)/share/pixmaps/mnsavings.ico \
+WINDOWS_PACKAGING = $(top_srcdir)/share/pixmaps/pivx.ico \
   $(top_srcdir)/share/pixmaps/nsis-header.bmp \
   $(top_srcdir)/share/pixmaps/nsis-wizard.bmp \
   $(top_srcdir)/doc/README_windows.txt
 
-LINUX_PACKAGING = $(top_srcdir)/share/pixmaps/mnsavings16.xpm \
-  $(top_srcdir)/share/pixmaps/mnsavings32.xpm \
-  $(top_srcdir)/share/pixmaps/mnsavings128.png
+LINUX_PACKAGING = $(top_srcdir)/share/pixmaps/pivx16.xpm \
+  $(top_srcdir)/share/pixmaps/pivx32.xpm \
+  $(top_srcdir)/share/pixmaps/pivx128.png
 
 OSX_PACKAGING = $(OSX_DEPLOY_SCRIPT) $(OSX_FANCY_PLIST) $(OSX_INSTALLER_ICONS) \
   $(top_srcdir)/contrib/macdeploy/$(OSX_BACKGROUND_SVG) \
@@ -618,18 +624,18 @@ OSX_PACKAGING = $(OSX_DEPLOY_SCRIPT) $(OSX_FANCY_PLIST) $(OSX_INSTALLER_ICONS) \
   $(top_srcdir)/contrib/macdeploy/detached-sig-create.sh
 
 COVERAGE_INFO = baseline.info \
-  test_mnsavings_filtered.info total_coverage.info \
+  test_pivx_filtered.info total_coverage.info \
   baseline_filtered.info functional_test.info functional_test_filtered.info \
-  test_mnsavings_coverage.info test_mnsavings.info
+  test_pivx_coverage.info test_pivx.info
 
 OSX_APP_BUILT = $(OSX_APP)/Contents/PkgInfo $(OSX_APP)/Contents/Resources/empty.lproj \
   $(OSX_APP)/Contents/Resources/bitcoin.icns $(OSX_APP)/Contents/Info.plist \
-  $(OSX_APP)/Contents/MacOS/MNSAVINGS-Qt $(OSX_APP)/Contents/Resources/Base.lproj/InfoPlist.strings
+  $(OSX_APP)/Contents/MacOS/mnsc-Qt $(OSX_APP)/Contents/Resources/Base.lproj/InfoPlist.strings
 
 APP_DIST_DIR = $(top_builddir)/dist
 APP_DIST_EXTRAS = $(APP_DIST_DIR)/.background/$(OSX_BACKGROUND_IMAGE) $(APP_DIST_DIR)/.DS_Store $(APP_DIST_DIR)/Applications
 OSX_BACKGROUND_IMAGE_DPIFILES := $(foreach dpi,$(OSX_BACKGROUND_IMAGE_DPIS),dpi$(dpi).$(OSX_BACKGROUND_IMAGE))
-#LCOV_FILTER_PATTERN = -p "/usr/include/" -p "/usr/lib/" -p "src/leveldb/" -p "src/univalue" -p "src/secp256k1"
+#LCOV_FILTER_PATTERN = -p "/usr/include/" -p "/usr/lib/" -p "src/leveldb/" -p "src/crc32c/" -p "src/univalue" -p "src/secp256k1"
 dist_noinst_SCRIPTS = autogen.sh
 EXTRA_DIST = $(DIST_SHARE) $(DIST_CONTRIB) $(DIST_DOCS) \
 	$(WINDOWS_PACKAGING) $(LINUX_PACKAGING) $(OSX_PACKAGING) \
@@ -648,7 +654,8 @@ EXTRA_DIST = $(DIST_SHARE) $(DIST_CONTRIB) $(DIST_DOCS) \
 	test/util/data/txcreatescript1.hex \
 	test/util/data/txcreatescript1.json \
 	test/util/data/txcreatesign.hex \
-	test/util/data/txcreatesign.json test/util/rpcauth-test.py
+	test/util/data/txcreatesign.json \
+	test/util/data/pre_hd_wallet.dat test/util/rpcauth-test.py
 CLEANFILES = $(OSX_DMG) $(BITCOIN_WIN_INSTALLER)
 DISTCHECK_CONFIGURE_FLAGS = --enable-man
 all: all-recursive
@@ -688,20 +695,20 @@ $(ACLOCAL_M4):  $(am__aclocal_m4_deps)
 	$(am__cd) $(srcdir) && $(ACLOCAL) $(ACLOCAL_AMFLAGS)
 $(am__aclocal_m4_deps):
 
-src/config/mnsavings-config.h: src/config/stamp-h1
+src/config/pivx-config.h: src/config/stamp-h1
 	@test -f $@ || rm -f src/config/stamp-h1
 	@test -f $@ || $(MAKE) $(AM_MAKEFLAGS) src/config/stamp-h1
 
-src/config/stamp-h1: $(top_srcdir)/src/config/mnsavings-config.h.in $(top_builddir)/config.status
+src/config/stamp-h1: $(top_srcdir)/src/config/pivx-config.h.in $(top_builddir)/config.status
 	@rm -f src/config/stamp-h1
-	cd $(top_builddir) && $(SHELL) ./config.status src/config/mnsavings-config.h
-$(top_srcdir)/src/config/mnsavings-config.h.in:  $(am__configure_deps) 
+	cd $(top_builddir) && $(SHELL) ./config.status src/config/pivx-config.h
+$(top_srcdir)/src/config/pivx-config.h.in:  $(am__configure_deps) 
 	($(am__cd) $(top_srcdir) && $(AUTOHEADER))
 	rm -f src/config/stamp-h1
 	touch $@
 
 distclean-hdr:
-	-rm -f src/config/mnsavings-config.h src/config/stamp-h1
+	-rm -f src/config/pivx-config.h src/config/stamp-h1
 libbitcoinconsensus.pc: $(top_builddir)/config.status $(srcdir)/libbitcoinconsensus.pc.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 share/setup.nsi: $(top_builddir)/config.status $(top_srcdir)/share/setup.nsi.in
@@ -1205,7 +1212,7 @@ $(OSX_APP)/Contents/Resources/bitcoin.icns: $(OSX_INSTALLER_ICONS)
 	$(MKDIR_P) $(@D)
 	$(INSTALL_DATA) $< $@
 
-$(OSX_APP)/Contents/MacOS/MNSAVINGS-Qt: all-recursive
+$(OSX_APP)/Contents/MacOS/mnsc-Qt: all-recursive
 	$(MKDIR_P) $(@D)
 	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM)  $(BITCOIN_QT_BIN) $@
 
@@ -1232,7 +1239,7 @@ $(APP_DIST_DIR)/Applications:
 	@rm -f $@
 	@cd $(@D); $(LN_S) /Applications $(@F)
 
-$(APP_DIST_EXTRAS): $(APP_DIST_DIR)/$(OSX_APP)/Contents/MacOS/MNSAVINGS-Qt
+$(APP_DIST_EXTRAS): $(APP_DIST_DIR)/$(OSX_APP)/Contents/MacOS/mnsc-Qt
 
 $(OSX_DMG): $(APP_DIST_EXTRAS)
 	$(GENISOIMAGE) -no-cache-inodes -D -l -probe -V "$(OSX_VOLNAME)" -no-pad -r -dir-mode 0755 -apple -o $@ dist
@@ -1246,14 +1253,14 @@ $(APP_DIST_DIR)/.background/$(OSX_BACKGROUND_IMAGE): $(OSX_BACKGROUND_IMAGE_DPIF
 $(APP_DIST_DIR)/.DS_Store: $(OSX_DSSTORE_GEN)
 	$(PYTHON) $< "$@" "$(OSX_VOLNAME)"
 
-$(APP_DIST_DIR)/$(OSX_APP)/Contents/MacOS/MNSAVINGS-Qt: $(OSX_APP_BUILT) $(OSX_PACKAGING)
+$(APP_DIST_DIR)/$(OSX_APP)/Contents/MacOS/mnsc-Qt: $(OSX_APP_BUILT) $(OSX_PACKAGING)
 	INSTALLNAMETOOL=$(INSTALLNAMETOOL)  OTOOL=$(OTOOL) STRIP=$(STRIP) $(PYTHON) $(OSX_DEPLOY_SCRIPT) $(OSX_APP) -translations-dir=$(QT_TRANSLATION_DIR) -add-qt-tr $(OSX_QT_TRANSLATIONS) -verbose 2
 
 deploydir: $(APP_DIST_EXTRAS)
 
 #appbundle: $(OSX_APP_BUILT)
 #deploy: $(OSX_DMG)
-#deploy: $(BITCOIN_WIN_INSTALLER)
+deploy: $(BITCOIN_WIN_INSTALLER)
 
 $(BITCOIN_QT_BIN): FORCE
 	$(MAKE) -C src qt/$(@F)
@@ -1271,16 +1278,16 @@ $(BITCOIN_CLI_BIN): FORCE
 #	$(abs_builddir)/contrib/filter-lcov.py $(LCOV_FILTER_PATTERN) $< $@
 #	$(LCOV) -a $@ $(LCOV_OPTS) -o $@
 
-#test_mnsavings.info: baseline_filtered.info
+#test_pivx.info: baseline_filtered.info
 #	$(MAKE) -C src/ check
-#	$(LCOV) -c $(LCOV_OPTS) -d $(abs_builddir)/src -t test_mnsavings -o $@
+#	$(LCOV) -c $(LCOV_OPTS) -d $(abs_builddir)/src -t test_pivx -o $@
 #	$(LCOV) -z $(LCOV_OPTS) -d $(abs_builddir)/src
 
-#test_mnsavings_filtered.info: test_mnsavings.info
+#test_pivx_filtered.info: test_pivx.info
 #	$(abs_builddir)/contrib/filter-lcov.py $(LCOV_FILTER_PATTERN) $< $@
 #	$(LCOV) -a $@ $(LCOV_OPTS) -o $@
 
-#functional_test.info: test_mnsavings_filtered.info
+#functional_test.info: test_pivx_filtered.info
 #	-@TIMEOUT=15 test/functional/test_runner.py $(EXTENDED_FUNCTIONAL_TESTS)
 #	$(LCOV) -c $(LCOV_OPTS) -d $(abs_builddir)/src --t functional-tests -o $@
 #	$(LCOV) -z $(LCOV_OPTS) -d $(abs_builddir)/src
@@ -1289,13 +1296,13 @@ $(BITCOIN_CLI_BIN): FORCE
 #	$(abs_builddir)/contrib/filter-lcov.py $(LCOV_FILTER_PATTERN) $< $@
 #	$(LCOV) -a $@ $(LCOV_OPTS) -o $@
 
-#test_mnsavings_coverage.info: baseline_filtered.info test_mnsavings_filtered.info
-#	$(LCOV) -a $(LCOV_OPTS) baseline_filtered.info -a test_mnsavings_filtered.info -o $@
+#test_pivx_coverage.info: baseline_filtered.info test_pivx_filtered.info
+#	$(LCOV) -a $(LCOV_OPTS) baseline_filtered.info -a test_pivx_filtered.info -o $@
 
-#total_coverage.info: test_mnsavings_filtered.info functional_test_filtered.info
-#	$(LCOV) -a $(LCOV_OPTS) baseline_filtered.info -a test_mnsavings_filtered.info -a functional_test_filtered.info -o $@ | $(GREP) "\%" | $(AWK) '{ print substr($$3,2,50) "/" $$5 }' > coverage_percent.txt
+#total_coverage.info: test_pivx_filtered.info functional_test_filtered.info
+#	$(LCOV) -a $(LCOV_OPTS) baseline_filtered.info -a test_pivx_filtered.info -a functional_test_filtered.info -o $@ | $(GREP) "\%" | $(AWK) '{ print substr($$3,2,50) "/" $$5 }' > coverage_percent.txt
 
-#test_mnsavings.coverage/.dirstamp:  test_mnsavings_coverage.info
+#test_pivx.coverage/.dirstamp:  test_pivx_coverage.info
 #	$(GENHTML) -s $(LCOV_OPTS) $< -o $(@D)
 #	@touch $@
 
@@ -1303,7 +1310,7 @@ $(BITCOIN_CLI_BIN): FORCE
 #	$(GENHTML) -s $(LCOV_OPTS) $< -o $(@D)
 #	@touch $@
 
-#cov: test_mnsavings.coverage/.dirstamp total.coverage/.dirstamp
+#cov: test_pivx.coverage/.dirstamp total.coverage/.dirstamp
 
 .INTERMEDIATE: $(COVERAGE_INFO)
 
@@ -1320,7 +1327,7 @@ clean-docs:
 	rm -rf doc/doxygen
 
 clean-local: clean-docs
-	rm -rf coverage_percent.txt test_mnsavings.coverage/ total.coverage/ test/tmp/ cache/ $(OSX_APP)
+	rm -rf coverage_percent.txt test_pivx.coverage/ total.coverage/ test/tmp/ cache/ $(OSX_APP)
 	rm -rf test/functional/__pycache__ test/functional/test_framework/__pycache__ test/cache share/rpcauth/__pycache__
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.

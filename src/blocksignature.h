@@ -1,9 +1,10 @@
-// Copyright (c) 2017-2019 The MNSAVINGS developers
+// Copyright (c) 2017-2019 The PIVX developers
+// Copyright (c) 2021-2023 The mnsc Developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef MNSAVINGS_BLOCKSIGNATURE_H
-#define MNSAVINGS_BLOCKSIGNATURE_H
+#ifndef PIVX_BLOCKSIGNATURE_H
+#define PIVX_BLOCKSIGNATURE_H
 
 #include "key.h"
 #include "primitives/block.h"
@@ -11,6 +12,6 @@
 
 bool SignBlockWithKey(CBlock& block, const CKey& key);
 bool SignBlock(CBlock& block, const CKeyStore& keystore);
-bool CheckBlockSignature(const CBlock& block);
+bool CheckBlockSignature(const CBlock& block, const bool enableP2PKH);
 
-#endif //MNSAVINGS_BLOCKSIGNATURE_H
+#endif //PIVX_BLOCKSIGNATURE_H

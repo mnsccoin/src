@@ -1,4 +1,5 @@
-// Copyright (c) 2019 The MNSAVINGS developers
+// Copyright (c) 2019 The PIVX developers
+// Copyright (c) 2021-2023 The mnsc Developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -7,7 +8,7 @@
 
 #include "guiutil.h"
 #include "walletmodel.h"
-#include "qt/mnsavings/qtutils.h"
+#include "qt/pivx/qtutils.h"
 
 #include <QUrl>
 #include <QFile>
@@ -17,7 +18,7 @@ OpenURIDialog::OpenURIDialog(QWidget* parent) : QDialog(parent, Qt::WindowSystem
 {
     ui->setupUi(this);
     this->setStyleSheet(parent->styleSheet());
-    ui->uriEdit->setPlaceholderText("mnsavings:");
+    ui->uriEdit->setPlaceholderText("mnsc:");
 
     ui->labelSubtitle->setText("URI");
     setCssProperty(ui->labelSubtitle, "text-title2-dialog");
@@ -29,8 +30,8 @@ OpenURIDialog::OpenURIDialog(QWidget* parent) : QDialog(parent, Qt::WindowSystem
     setCssProperty(ui->pushButtonCancel, "btn-dialog-cancel");
 
     initCssEditLine(ui->uriEdit, true);
-    connect(ui->pushButtonOK, SIGNAL(clicked()), this, SLOT(accept()));
-    connect(ui->pushButtonCancel, SIGNAL(clicked()), this, SLOT(close()));
+    connect(ui->pushButtonOK, &QPushButton::clicked, this, &OpenURIDialog::accept);
+    connect(ui->pushButtonCancel, &QPushButton::clicked, this, &OpenURIDialog::close);
 }
 
 void OpenURIDialog::showEvent(QShowEvent *event)
@@ -79,8 +80,8 @@ void OpenURIDialog::on_selectFileButton_clicked()
         }
 
         QString str = QString::fromStdString(std::string(r.constData(), r.length()));
-        if (!str.startsWith("mnsavings")) {
-            inform(tr("Invalid URI, not starting with \"mnsavings\" prefix"));
+        if (!str.startsWith("mnsc")) {
+            inform(tr("Invalid URI, not starting with \"mnsc\" prefix"));
         }
         ui->uriEdit->setText(str);
     }

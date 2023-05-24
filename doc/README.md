@@ -1,39 +1,38 @@
-mnsc Coin
+mnsc Core
 =============
 
 Setup
 ---------------------
-[mnsc Coin](http://mnsaving.com/wallet) is the original MNSAVINGS client and it builds the backbone of the network. However, it downloads and stores the entire history of MNSAVINGS transactions; depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more. Thankfully you only have to do this once.
+[mnsc Core](https://mnsaving.com/) is the original mnsc client and it builds the backbone of the network. However, it downloads and stores the entire history of mnsc transactions; depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more. Thankfully you only have to do this once.
 
 Running
 ---------------------
-The following are some helpful notes on how to run mnsc Coin on your native platform.
+The following are some helpful notes on how to run mnsc Core on your native platform.
 
 ### Unix
 
 Unpack the files into a directory and run:
 
-- `bin/mnsavings-qt` (GUI) or
-- `bin/mnsavingsd` (headless)
+- `bin/mnsc-qt` (GUI) or
+- `bin/mnscd` (headless)
 
 ### Windows
 
-Unpack the files into a directory, and then run mnsavings-qt.exe.
+Unpack the files into a directory, and then run mnsc-qt.exe.
 
 ### macOS
 
-Drag MNSAVINGS-Qt to your applications folder, and then run MNSAVINGS-Qt.
+Drag mnsc-Qt to your applications folder, and then run mnsc-Qt.
 
 ### Need Help?
 
-* See the documentation at the [MNSAVINGS Wiki](https://github.com/derikglobal/mnsaving/wiki)
+* See the documentation at the [mnsc Wiki](https://github.com/mnsc/mnsc)
 for help and more information.
-* Ask for help on [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) or on the [MNSAVINGS Forum](http://forum.mnsaving.com/).
-* Join our Discord server [Discord Server](https://discord.mnsaving.com)
+* Join our Discord server [Discord Server](https://discord.gg/sfvGvVPhpJ)
 
 Building
 ---------------------
-The following are developer notes on how to build mnsc Coin on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
+The following are developer notes on how to build mnsc Core on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
 
 - [Dependencies](dependencies.md)
 - [macOS Build Notes](build-osx.md)
@@ -43,21 +42,21 @@ The following are developer notes on how to build mnsc Coin on your native platf
 
 Development
 ---------------------
-The MNSAVINGS repo's [root README](/README.md) contains relevant information on the development process and automated testing.
+The mnsc repo's [root README](/README.md) contains relevant information on the development process and automated testing.
 
 - [Developer Notes](developer-notes.md)
 - [Multiwallet Qt Development](multiwallet-qt.md)
 - [Release Notes](release-notes.md)
 - [Release Process](release-process.md)
-- [Source Code Documentation (External Link)](https://www.fuzzbawls.pw/mnsavings/doxygen/)
+- [Source Code Documentation (External Link)](https://github.com/mnsc/mnsc)
 - [Translation Process](translation_process.md)
 - [Unit Tests](unit-tests.md)
 - [Unauthenticated REST Interface](REST-interface.md)
 - [Dnsseed Policy](dnsseed-policy.md)
 
 ### Resources
-* Discuss on the [BitcoinTalk](https://bitcointalk.org/) or the [MNSAVINGS](http://forum.mnsaving.com/) forum.
-* Join the [MNSAVINGS Discord](https://discord.mnsaving.com).
+* Discuss on the [mnsc Homepage](https://github.com/mnsc/mnsc).
+* Join the [mnsc Discord](https://discord.gg/sfvGvVPhpJ).
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)

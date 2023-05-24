@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Name=mnsc
+Comment= mnsc P2P Cryptocurrency
+Comment[fr]= mnsc, monnaie virtuelle cryptographique pair à pair
+Comment[tr]= mnsc, eşten eşe kriptografik sanal para birimi
+Exec=mnsc-qt %u
+Terminal=false
+Type=Application
+Icon=pivx128
+MimeType=x-scheme-handler/pivx;
+Categories=Office;Finance;
+StartupWMClass=mnsc-qt

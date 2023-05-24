@@ -1,33 +1,33 @@
-Name "mnsc Coin (-bit)"
+Name "mnsc Core (64-bit)"
 
 RequestExecutionLevel highest
 SetCompressor /SOLID lzma
 
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
-!define COMPANY "mnsc Coin project"
-!define URL https://www.mnsaving.com
+!define COMPANY "mnsc Core project"
+!define URL https://www.pivx.org
 
 # MUI Symbol Definitions
-!define MUI_ICON "/root/mnsc/share/pixmaps/mnsavings.ico"
-!define MUI_WELCOMEFINISHPAGE_BITMAP "/root/mnsc/share/pixmaps/nsis-wizard.bmp"
+!define MUI_ICON "/root/mnsc2000/share/pixmaps/pivx.ico"
+!define MUI_WELCOMEFINISHPAGE_BITMAP "/root/mnsc2000/share/pixmaps/nsis-wizard.bmp"
 !define MUI_HEADERIMAGE
 !define MUI_HEADERIMAGE_RIGHT
-!define MUI_HEADERIMAGE_BITMAP "/root/mnsc/share/pixmaps/nsis-header.bmp"
+!define MUI_HEADERIMAGE_BITMAP "/root/mnsc2000/share/pixmaps/nsis-header.bmp"
 !define MUI_FINISHPAGE_NOAUTOCLOSE
 !define MUI_STARTMENUPAGE_REGISTRY_ROOT HKLM
 !define MUI_STARTMENUPAGE_REGISTRY_KEY ${REGKEY}
 !define MUI_STARTMENUPAGE_REGISTRY_VALUENAME StartMenuGroup
-!define MUI_STARTMENUPAGE_DEFAULTFOLDER "mnsc Coin"
-!define MUI_FINISHPAGE_RUN $INSTDIR\mnsavings-qt
+!define MUI_STARTMENUPAGE_DEFAULTFOLDER "mnsc Core"
+!define MUI_FINISHPAGE_RUN $INSTDIR\mnsc-qt.exe
 !define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\modern-uninstall.ico"
-!define MUI_UNWELCOMEFINISHPAGE_BITMAP "/root/mnsc/share/pixmaps/nsis-wizard.bmp"
+!define MUI_UNWELCOMEFINISHPAGE_BITMAP "/root/mnsc2000/share/pixmaps/nsis-wizard.bmp"
 !define MUI_UNFINISHPAGE_NOAUTOCLOSE
 
 # Included files
 !include Sections.nsh
 !include MUI2.nsh
-!if "" == "64"
+!if "64" == "64"
 !include x64.nsh
 !endif
 
@@ -47,22 +47,22 @@ Var StartMenuGroup
 !insertmacro MUI_LANGUAGE English
 
 # Installer attributes
-OutFile /root/mnsc/mnsavings-1.0.0-win-setup.exe
-!if "" == "64"
-InstallDir $PROGRAMFILES64\mnsavings
+OutFile /root/mnsc2000/mnsc-2.0.0-win64-setup.exe
+!if "64" == "64"
+InstallDir $PROGRAMFILES64\Pivx
 !else
-InstallDir $PROGRAMFILES\mnsavings
+InstallDir $PROGRAMFILES\Pivx
 !endif
 CRCCheck on
 XPStyle on
 BrandingText " "
 ShowInstDetails show
-VIProductVersion 1.0.0.0
-VIAddVersionKey ProductName "mnsc Coin"
-VIAddVersionKey ProductVersion "1.0.0"
+VIProductVersion 2.0.0.0
+VIAddVersionKey ProductName "mnsc Core"
+VIAddVersionKey ProductVersion "2.0.0"
 VIAddVersionKey CompanyName "${COMPANY}"
 VIAddVersionKey CompanyWebsite "${URL}"
-VIAddVersionKey FileVersion "1.0.0"
+VIAddVersionKey FileVersion "2.0.0"
 VIAddVersionKey FileDescription ""
 VIAddVersionKey LegalCopyright ""
 InstallDirRegKey HKCU "${REGKEY}" Path
@@ -72,14 +72,14 @@ ShowUninstDetails show
 Section -Main SEC0000
     SetOutPath $INSTDIR
     SetOverwrite on
-    File /root/mnsc/release/mnsavings-qt
-    File /oname=COPYING.txt /root/mnsc/COPYING
-    File /oname=readme.txt /root/mnsc/doc/README_windows.txt
+    File /root/mnsc2000/release/mnsc-qt.exe
+    File /oname=COPYING.txt /root/mnsc2000/COPYING
+    File /oname=readme.txt /root/mnsc2000/doc/README_windows.txt
     SetOutPath $INSTDIR\daemon
-    File /root/mnsc/release/mnsavingsd
-    File /root/mnsc/release/mnsavings-cli
+    File /root/mnsc2000/release/mnscd.exe
+    File /root/mnsc2000/release/mnsc-cli.exe
     SetOutPath $INSTDIR\doc
-    File /r /root/mnsc/doc\*.*
+    File /r /root/mnsc2000/doc\*.*
     SetOutPath $INSTDIR
     WriteRegStr HKCU "${REGKEY}\Components" Main 1
 SectionEnd
@@ -90,21 +90,22 @@ Section -post SEC0001
     WriteUninstaller $INSTDIR\uninstall.exe
     !insertmacro MUI_STARTMENU_WRITE_BEGIN Application
     CreateDirectory $SMPROGRAMS\$StartMenuGroup
-    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\$(^Name).lnk" $INSTDIR\mnsavings-qt
+    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\$(^Name).lnk" $INSTDIR\mnsc-qt.exe
+    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\mnsc Core (testnet, 64-bit).lnk" "$INSTDIR\mnsc-qt.exe" "-testnet" "$INSTDIR\mnsc-qt.exe" 1
     CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Uninstall $(^Name).lnk" $INSTDIR\uninstall.exe
     !insertmacro MUI_STARTMENU_WRITE_END
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayName "$(^Name)"
-    WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayVersion "1.0.0"
+    WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayVersion "2.0.0"
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" Publisher "${COMPANY}"
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" URLInfoAbout "${URL}"
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayIcon $INSTDIR\uninstall.exe
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" UninstallString $INSTDIR\uninstall.exe
     WriteRegDWORD HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" NoModify 1
     WriteRegDWORD HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" NoRepair 1
-    WriteRegStr HKCR "mnsavings" "URL Protocol" ""
-    WriteRegStr HKCR "mnsavings" "" "URL:mnsavings"
-    WriteRegStr HKCR "mnsavings\DefaultIcon" "" $INSTDIR\mnsavings-qt
-    WriteRegStr HKCR "mnsavings\shell\open\command" "" '"$INSTDIR\mnsavings-qt" "%1"'
+    WriteRegStr HKCR "mnsc" "URL Protocol" ""
+    WriteRegStr HKCR "mnsc" "" "URL:Pivx"
+    WriteRegStr HKCR "mnsc\DefaultIcon" "" $INSTDIR\mnsc-qt.exe
+    WriteRegStr HKCR "mnsc\shell\open\command" "" '"$INSTDIR\mnsc-qt.exe" "%1"'
 SectionEnd
 
 # Macro for selecting uninstaller sections
@@ -122,7 +123,7 @@ done${UNSECTION_ID}:
 
 # Uninstaller sections
 Section /o -un.Main UNSEC0000
-    Delete /REBOOTOK $INSTDIR\mnsavings-qt
+    Delete /REBOOTOK $INSTDIR\mnsc-qt.exe
     Delete /REBOOTOK $INSTDIR\COPYING.txt
     Delete /REBOOTOK $INSTDIR\readme.txt
     RMDir /r /REBOOTOK $INSTDIR\daemon
@@ -134,7 +135,8 @@ Section -un.post UNSEC0001
     DeleteRegKey HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)"
     Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Uninstall $(^Name).lnk"
     Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\$(^Name).lnk"
-    Delete /REBOOTOK "$SMSTARTUP\mnsavings.lnk"
+    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\mnsc Core (testnet, 64-bit).lnk"
+    Delete /REBOOTOK "$SMSTARTUP\Pivx.lnk"
     Delete /REBOOTOK $INSTDIR\uninstall.exe
     Delete /REBOOTOK $INSTDIR\debug.log
     Delete /REBOOTOK $INSTDIR\db.log
@@ -142,7 +144,7 @@ Section -un.post UNSEC0001
     DeleteRegValue HKCU "${REGKEY}" Path
     DeleteRegKey /IfEmpty HKCU "${REGKEY}\Components"
     DeleteRegKey /IfEmpty HKCU "${REGKEY}"
-    DeleteRegKey HKCR "mnsavings"
+    DeleteRegKey HKCR "mnsc"
     RmDir /REBOOTOK $SMPROGRAMS\$StartMenuGroup
     RmDir /REBOOTOK $INSTDIR
     Push $R0
@@ -155,7 +157,7 @@ SectionEnd
 # Installer functions
 Function .onInit
     InitPluginsDir
-!if "" == "64"
+!if "64" == "64"
     ${If} ${RunningX64}
       ; disable registry redirection (enable access to 64-bit portion of registry)
       SetRegView 64

@@ -1,4 +1,4 @@
-Source: mnsavings
+Source: mnsc
 Section: utils
 Priority: optional
 Maintainer: Fuzzbawls <fuzzbawls@gmail.com>
@@ -28,37 +28,37 @@ Build-Depends: debhelper,
  libzmq3-dev,
  dh-systemd
 Standards-Version: 3.9.2
-Homepage: http://www.mnsaving.com
-Vcs-Git: git://github.com/derikglobal/mnsaving.git
-Vcs-Browser: http://github.com/derikglobal/mnsaving
+Homepage: https://www.mnsaving.com/
+Vcs-Git: git:github.com/mnsc/mnsc.git
+Vcs-Browser: https://github.com/mnsc/mnsc/
 
-Package: mnsavingsd
+Package: mnscd
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - daemon
- MNSAVINGS is a free open source peer-to-peer electronic cash system that
+ mnsc is a free, open source peer-to-peer electronic cash system that
  is completely decentralized, without the need for a central server or
  trusted parties.  Users hold the crypto keys to their own money and
  transact directly with each other, with the help of a P2P network to
  check for double-spending.
  .
  Full transaction history is stored locally at each client.  This
- requires 10+ GB of space, slowly growing.
+ requires 18.5+ GB of space, slowly growing.
  .
- This package provides the daemon, mnsavingsd, and the CLI tool
- mnsavings-cli to interact with the daemon.
+ This package provides the daemon, mnscd, and the CLI tool
+ mnsc-cli to interact with the daemon.
 
-Package: mnsavings-qt
+Package: mnsc-qt
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - Qt GUI
- MNSAVINGS is a free open source peer-to-peer electronic cash system that
+ mnsc is a free, open source peer-to-peer electronic cash system that
  is completely decentralized, without the need for a central server or
  trusted parties.  Users hold the crypto keys to their own money and
  transact directly with each other, with the help of a P2P network to
  check for double-spending.
  .
  Full transaction history is stored locally at each client.  This
- requires 10+ GB of space, slowly growing.
+ requires 18.5+ GB of space, slowly growing.
  .
- This package provides mnsavings-Qt, a GUI for MNSAVINGS based on Qt.
+ This package provides mnsc-Qt, a GUI for mnsc based on Qt.

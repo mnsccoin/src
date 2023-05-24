@@ -1,6 +1,7 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2018 The MNSAVINGS developers
+// Copyright (c) 2015-2018 The PIVX developers
+// Copyright (c) 2021-2023 The mnsc Developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -13,7 +14,7 @@ static const int MODEL_UPDATE_DELAY = 1000;
 /* AskPassphraseDialog -- Maximum passphrase length */
 static const int MAX_PASSPHRASE_SIZE = 1024;
 
-/* mnsavings GUI -- Size of icons in status bar */
+/* mnsc GUI -- Size of icons in status bar */
 static const int STATUSBAR_ICONSIZE = 16;
 
 static const bool DEFAULT_SPLASHSCREEN = true;
@@ -29,8 +30,6 @@ static const bool DEFAULT_SPLASHSCREEN = true;
 #define COLOR_BAREADDRESS QColor(140, 140, 140)
 /* Transaction list -- TX status decoration - open until date */
 #define COLOR_TX_STATUS_OPENUNTILDATE QColor(64, 64, 255)
-/* Transaction list -- TX status decoration - offline */
-#define COLOR_TX_STATUS_OFFLINE QColor(192, 192, 192)
 /* Transaction list -- TX status decoration - default color */
 #define COLOR_BLACK QColor(51, 51, 51)
 /* Transaction list -- TX status decoration - conflicted */
@@ -50,12 +49,10 @@ static const int MAX_URI_LENGTH = 255;
 /* QRCodeDialog -- size of exported QR Code image */
 #define EXPORT_IMAGE_SIZE 256
 
-/* Number of frames in spinner animation */
-#define SPINNER_FRAMES 35
 
-#define QAPP_ORG_NAME "MNSAVINGS"
-#define QAPP_ORG_DOMAIN "mnsaving.com"
-#define QAPP_APP_NAME_DEFAULT "MNSAVINGS-Qt"
-#define QAPP_APP_NAME_TESTNET "MNSAVINGS-Qt-testnet"
+#define QAPP_ORG_NAME "mnsc"
+#define QAPP_ORG_DOMAIN "mnsc.org"
+#define QAPP_APP_NAME_DEFAULT "mnsc-Qt"
+#define QAPP_APP_NAME_TESTNET "mnsc-Qt-testnet"
 
 #endif // BITCOIN_QT_GUICONSTANTS_H

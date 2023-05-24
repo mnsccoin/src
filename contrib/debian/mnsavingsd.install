@@ -1,3 +1,0 @@
-usr/local/bin/mnsavingsd usr/bin
-usr/local/bin/mnsavings-cli usr/bin
-debian/examples/mnsavings.conf etc/mnsavings
