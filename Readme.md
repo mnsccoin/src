@@ -87,7 +87,7 @@ we want to backup the mnsc-coin with other masternode coins! <p>
 <tr>
 <td class="xl65" style="width: 120px; text-align: center;">501</td>
 <td class="xl65" style="width: 120px; text-align: center;">15000</td>
-<td class="xl65" style="width: 180px; text-align: center;">1500</td>
+<td class="xl65" style="width: 180px; text-align: center;">15000</td>
 <td class="xl65" style="width: 120px; text-align: center;">1</td>
 <td class="xl65" style="width: 120px; text-align: center;">0.8</td>
 <td class="xl65" style="width: 120px; text-align: center;">0.2</td>
