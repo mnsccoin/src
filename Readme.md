@@ -118,32 +118,136 @@ we want to backup the mnsc-coin with other masternode coins! <p>
 </tr>
 <tr>
 <td class="xl65" style="width: 120px; text-align: center;">300001</td>
-<td class="xl65" style="width: 120px; text-align: center;">550000</td>
+<td class="xl65" style="width: 120px; text-align: center;">360000</td>
 <td class="xl65" style="width: 180px; text-align: center;">30000</td>
 <td class="xl65" style="width: 120px; text-align: center;">50</td>
 <td class="xl65" style="width: 120px; text-align: center;">40</td>
 <td class="xl66" style="width: 120px; text-align: center;">10</td>
 </tr>
 <tr>
+<td class="xl65" style="width: 120px; text-align: center;">360001</td>
+<td class="xl65" style="width: 120px; text-align: center;">400000</td>
+<td class="xl65" style="width: 180px; text-align: center;">50000</td>
+<td class="xl65" style="width: 120px; text-align: center;">50</td>
+<td class="xl65" style="width: 120px; text-align: center;">40</td>
+<td class="xl66" style="width: 120px; text-align: center;">10</td>
+</tr>
+<tr>
+<td class="xl65" style="width: 120px; text-align: center;">400001</td>
+<td class="xl65" style="width: 120px; text-align: center;">450000</td>
+<td class="xl65" style="width: 180px; text-align: center;">60000</td>
+<td class="xl65" style="width: 120px; text-align: center;">50</td>
+<td class="xl65" style="width: 120px; text-align: center;">40</td>
+<td class="xl66" style="width: 120px; text-align: center;">10</td>
+</tr>
+<tr>
+<td class="xl65" style="width: 120px; text-align: center;">450001</td>
+<td class="xl65" style="width: 120px; text-align: center;">500000</td>
+<td class="xl65" style="width: 180px; text-align: center;">70000</td>
+<td class="xl65" style="width: 120px; text-align: center;">50</td>
+<td class="xl65" style="width: 120px; text-align: center;">40</td>
+<td class="xl66" style="width: 120px; text-align: center;">10</td>
+</tr>
+<tr>
+<td class="xl65" style="width: 120px; text-align: center;">500001</td>
+<td class="xl65" style="width: 120px; text-align: center;">550000</td>
+<td class="xl65" style="width: 180px; text-align: center;">80000</td>
+<td class="xl65" style="width: 120px; text-align: center;">50</td>
+<td class="xl65" style="width: 120px; text-align: center;">40</td>
+<td class="xl66" style="width: 120px; text-align: center;">10</td>
+</tr>
+<tr>
 <td class="xl65" style="width: 120px; text-align: center;">550001</td>
-<td class="xl65" style="width: 120px; text-align: center;">800000</td>
-<td class="xl65" style="width: 180px; text-align: center;">40000</td>
+<td class="xl65" style="width: 120px; text-align: center;">600000</td>
+<td class="xl65" style="width: 180px; text-align: center;">90000</td>
 <td class="xl65" style="width: 120px; text-align: center;">45</td>
 <td class="xl65" style="width: 120px; text-align: center;">38</td>
 <td class="xl66" style="width: 120px; text-align: center;">9</td>
 </tr>
 <tr>
+<td class="xl65" style="width: 120px; text-align: center;">600001</td>
+<td class="xl65" style="width: 120px; text-align: center;">650000</td>
+<td class="xl65" style="width: 180px; text-align: center;">100000</td>
+<td class="xl65" style="width: 120px; text-align: center;">45</td>
+<td class="xl65" style="width: 120px; text-align: center;">38</td>
+<td class="xl66" style="width: 120px; text-align: center;">9</td>
+</tr>
+<tr>
+<td class="xl65" style="width: 120px; text-align: center;">650001</td>
+<td class="xl65" style="width: 120px; text-align: center;">700000</td>
+<td class="xl65" style="width: 180px; text-align: center;">110000</td>
+<td class="xl65" style="width: 120px; text-align: center;">45</td>
+<td class="xl65" style="width: 120px; text-align: center;">38</td>
+<td class="xl66" style="width: 120px; text-align: center;">9</td>
+</tr>
+<tr>
+<td class="xl65" style="width: 120px; text-align: center;">700001</td>
+<td class="xl65" style="width: 120px; text-align: center;">750000</td>
+<td class="xl65" style="width: 180px; text-align: center;">120000</td>
+<td class="xl65" style="width: 120px; text-align: center;">45</td>
+<td class="xl65" style="width: 120px; text-align: center;">38</td>
+<td class="xl66" style="width: 120px; text-align: center;">9</td>
+</tr>
+<tr>
+<td class="xl65" style="width: 120px; text-align: center;">750001</td>
+<td class="xl65" style="width: 120px; text-align: center;">800000</td>
+<td class="xl65" style="width: 180px; text-align: center;">130000</td>
+<td class="xl65" style="width: 120px; text-align: center;">45</td>
+<td class="xl65" style="width: 120px; text-align: center;">38</td>
+<td class="xl66" style="width: 120px; text-align: center;">9</td>  
+</tr>
+<tr>
 <td class="xl65" style="width: 120px; text-align: center;">800001</td>
-<td class="xl65" style="width: 120px; text-align: center;">1050000</td>
-<td class="xl65" style="width: 180px; text-align: center;">60000</td>
+<td class="xl65" style="width: 120px; text-align: center;">850000</td>
+<td class="xl65" style="width: 180px; text-align: center;">140000</td>
+<td class="xl65" style="width: 120px; text-align: center;">40</td>
+<td class="xl65" style="width: 120px; text-align: center;">32</td>
+<td class="xl66" style="width: 120px; text-align: center;">8</td>  
+</tr>
+<tr>
+<td class="xl65" style="width: 120px; text-align: center;">850001</td>
+<td class="xl65" style="width: 120px; text-align: center;">900000</td>
+<td class="xl65" style="width: 180px; text-align: center;">150000</td>
 <td class="xl65" style="width: 120px; text-align: center;">40</td>
 <td class="xl65" style="width: 120px; text-align: center;">32</td>
 <td class="xl66" style="width: 120px; text-align: center;">8</td>
 </tr>
 <tr>
+<td class="xl65" style="width: 120px; text-align: center;">900001</td>
+<td class="xl65" style="width: 120px; text-align: center;">950000</td>
+<td class="xl65" style="width: 180px; text-align: center;">160000</td>
+<td class="xl65" style="width: 120px; text-align: center;">40</td>
+<td class="xl65" style="width: 120px; text-align: center;">32</td>
+<td class="xl66" style="width: 120px; text-align: center;">8</td>  
+</tr>
+<tr>
+<td class="xl65" style="width: 120px; text-align: center;">950001</td>
+<td class="xl65" style="width: 120px; text-align: center;">1000000</td>
+<td class="xl65" style="width: 180px; text-align: center;">170000</td>
+<td class="xl65" style="width: 120px; text-align: center;">40</td>
+<td class="xl65" style="width: 120px; text-align: center;">32</td>
+<td class="xl66" style="width: 120px; text-align: center;">8</td>  
+</tr>
+<tr>
+<td class="xl65" style="width: 120px; text-align: center;">1000001</td>
+<td class="xl65" style="width: 120px; text-align: center;">1050000</td>
+<td class="xl65" style="width: 180px; text-align: center;">180000</td>
+<td class="xl65" style="width: 120px; text-align: center;">40</td>
+<td class="xl65" style="width: 120px; text-align: center;">32</td>
+<td class="xl66" style="width: 120px; text-align: center;">8</td>  
+</tr>
+<tr>
 <td class="xl65" style="width: 120px; text-align: center;">1050001</td>
+<td class="xl65" style="width: 120px; text-align: center;">1100000</td>
+<td class="xl65" style="width: 180px; text-align: center;">190000</td>
+<td class="xl65" style="width: 120px; text-align: center;">30</td>
+<td class="xl65" style="width: 120px; text-align: center;">24</td>
+<td class="xl66" style="width: 120px; text-align: center;">6</td>
+</tr>
+<tr>
+<td class="xl65" style="width: 120px; text-align: center;">1100001</td>
 <td class="xl65" style="width: 120px; text-align: center;">1400000</td>
-<td class="xl65" style="width: 180px; text-align: center;">80000</td>
+<td class="xl65" style="width: 180px; text-align: center;">200000</td>
 <td class="xl65" style="width: 120px; text-align: center;">30</td>
 <td class="xl65" style="width: 120px; text-align: center;">24</td>
 <td class="xl66" style="width: 120px; text-align: center;">6</td>
@@ -151,7 +255,7 @@ we want to backup the mnsc-coin with other masternode coins! <p>
 <tr>
 <td class="xl65" style="width: 120px; text-align: center;">1400001</td>
 <td class="xl65" style="width: 120px; text-align: center;">2000000</td>
-<td class="xl65" style="width: 180px; text-align: center;">100000</td>
+<td class="xl65" style="width: 180px; text-align: center;">200000</td>
 <td class="xl65" style="width: 120px; text-align: center;">25</td>
 <td class="xl65" style="width: 120px; text-align: center;">20</td>
 <td class="xl66" style="width: 120px; text-align: center;">5</td>
@@ -159,7 +263,7 @@ we want to backup the mnsc-coin with other masternode coins! <p>
 <tr>
 <td class="xl65" style="width: 120px; text-align: center;">2000001</td>
 <td class="xl65" style="width: 120px; text-align: center;">5600000</td>
-<td class="xl65" style="width: 180px; text-align: center;">125000</td>
+<td class="xl65" style="width: 180px; text-align: center;">200000</td>
 <td class="xl65" style="width: 120px; text-align: center;">20</td>
 <td class="xl65" style="width: 120px; text-align: center;">16</td>
 <td class="xl66" style="width: 120px; text-align: center;">4</td>
@@ -167,7 +271,7 @@ we want to backup the mnsc-coin with other masternode coins! <p>
 <tr>
 <td class="xl65" style="width: 120px; text-align: center;">5600001</td>
 <td class="xl65" style="width: 120px; text-align: center;">inf</td>
-<td class="xl65" style="width: 180px; text-align: center;">125000</td>
+<td class="xl65" style="width: 180px; text-align: center;">200000</td>
 <td class="xl65" style="width: 120px; text-align: center;">0</td>
 <td class="xl65" style="width: 120px; text-align: center;">0</td>
 <td class="xl66" style="width: 120px; text-align: center;">0</td>
