@@ -28,7 +28,7 @@ we want to backup the mnsc-coin with other masternode coins! <p>
 </tr>
 <tr>
 <td>Maximum Supply</td>
-<td>160 000 000 MNSC</td>
+<td>146 000 000 MNSC</td>
 </tr>
 <tr>
 <td>Minimum Stake Age</td>
